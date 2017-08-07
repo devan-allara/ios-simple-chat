@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jjW-6A-Gre">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat View Controller-->
+        <scene sceneID="tKH-iM-7dH">
+            <objects>
+                <viewController id="jjW-6A-Gre" customClass="ChatViewController" customModule="ios_firebase_chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="myn-Cy-Fzx"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDm-Z0-B1g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ixc-gA-7jK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-5g-1R4">
+                                <rect key="frame" x="0.0" y="676" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" fixedFrame="YES" pagingEnabled="YES" maximumZoomScale="40" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-YT-Sfx">
+                                        <rect key="frame" x="8" y="12" width="285" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXa-UT-gYK">
+                                        <rect key="frame" x="307" y="12" width="99" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="jjW-6A-Gre" eventType="touchUpInside" id="SNX-jG-jhr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82352941180000006" green="0.85882352939999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j9R-bK-UWp">
+                                <rect key="frame" x="0.0" y="76" width="414" height="601"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatCell" rowHeight="85" id="vKz-eK-yOo" customClass="ChatTableViewCell" customModule="ios_firebase_chat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vKz-eK-yOo" id="h83-n2-F3G">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG7-nK-KoX">
+                                                    <rect key="frame" x="8" y="8" width="129" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="headTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srl-v6-cEg">
+                                                    <rect key="frame" x="8" y="32" width="237" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Message">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="17"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mesageLabel" destination="srl-v6-cEg" id="AXb-au-6xE"/>
+                                            <outlet property="userLabel" destination="SG7-nK-KoX" id="Pdw-zE-rXZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyMessageChatCell" rowHeight="85" id="wmE-xQ-cYa" customClass="MyMessageTableViewCell" customModule="ios_firebase_chat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="113" width="414" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wmE-xQ-cYa" id="G8n-jG-qBd" customClass="MyMessageTableViewCell" customModule="ios_firebase_chat">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-4h-azl">
+                                                    <rect key="frame" x="169" y="31" width="237" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Message">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="17"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hg-jS-Yu7">
+                                                    <rect key="frame" x="277" y="8" width="129" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageText" destination="Cfd-4h-azl" id="wNr-6L-XC6"/>
+                                            <outlet property="nameLabel" destination="3hg-jS-Yu7" id="Ngo-vR-BbT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Els-ia-UgE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Simple Chat!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpT-K8-p0r">
+                                        <rect key="frame" x="124" y="17" width="167" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="3"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="chatText" destination="sa3-YT-Sfx" id="kQs-l7-wWs"/>
+                        <outlet property="sendButton" destination="GXa-UT-gYK" id="JWW-oJ-iTh"/>
+                        <outlet property="tableView" destination="j9R-bK-UWp" id="OnK-Z2-x2e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6z-kS-EeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218.84057971014494" y="268.20652173913044"/>
+        </scene>
+    </scenes>
+</document>
