@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+//Data model for a message, containing parameters for a sender and the message text
 class message {
     var sender: String
     var message: String

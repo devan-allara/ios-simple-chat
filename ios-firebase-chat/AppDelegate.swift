@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false
         IQKeyboardManager.shared().shouldShowTextFieldPlaceholder = false
-        IQKeyboardManager.shared().shouldHidePreviousNext = false
+        IQKeyboardManager.shared().previousNextDisplayMode = .alwaysHide
+        
         FIRApp.configure()
         
         return true

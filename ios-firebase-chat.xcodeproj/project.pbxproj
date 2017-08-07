@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		394FD77F1F38B312006C0914 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 394FD77E1F38B2FF006C0914 /* GoogleService-Info.plist */; };
 		550565CAAA8AE63EF7E03CDA /* Pods_ios_firebase_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA4FBA030A940218237FF66 /* Pods_ios_firebase_chat.framework */; };
 		BF527CB41F1D3D2D00245E34 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527CB31F1D3D2D00245E34 /* ChatViewController.swift */; };
 		BF527CB71F1D3E4300245E34 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527CB61F1D3E4300245E34 /* Message.swift */; };
-		BF527CBF1F1E5B7500245E34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF527CBE1F1E5B7500245E34 /* GoogleService-Info.plist */; };
 		BF753A8C1F1D2155007C2C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF753A8B1F1D2155007C2C9A /* AppDelegate.swift */; };
 		BF753A911F1D2155007C2C9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF753A8F1F1D2155007C2C9A /* Main.storyboard */; };
 		BF753A941F1D2155007C2C9A /* ios_firebase_chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF753A921F1D2155007C2C9A /* ios_firebase_chat.xcdatamodeld */; };
@@ -23,9 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		394FD77E1F38B2FF006C0914 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF527CB31F1D3D2D00245E34 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BF527CB61F1D3E4300245E34 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		BF527CBE1F1E5B7500245E34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF753A881F1D2155007C2C9A /* ios-firebase-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-firebase-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF753A8B1F1D2155007C2C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF753A901F1D2155007C2C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				BF753A951F1D2155007C2C9A /* Assets.xcassets */,
 				BF753A9A1F1D2155007C2C9A /* Info.plist */,
 				BF753A921F1D2155007C2C9A /* ios_firebase_chat.xcdatamodeld */,
-				BF527CBE1F1E5B7500245E34 /* GoogleService-Info.plist */,
+				394FD77E1F38B2FF006C0914 /* GoogleService-Info.plist */,
 			);
 			path = "ios-firebase-chat";
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 			files = (
 				BF753A991F1D2155007C2C9A /* LaunchScreen.storyboard in Resources */,
 				BF753A961F1D2155007C2C9A /* Assets.xcassets in Resources */,
-				BF527CBF1F1E5B7500245E34 /* GoogleService-Info.plist in Resources */,
+				394FD77F1F38B312006C0914 /* GoogleService-Info.plist in Resources */,
 				BFE67E2F1F1D2CB30054864B /* Chat.storyboard in Resources */,
 				BF753A911F1D2155007C2C9A /* Main.storyboard in Resources */,
 			);
@@ -226,13 +226,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-firebase-chat-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F3A9539F4A046AEA6E74436E /* [CP] Embed Pods Frameworks */ = {
@@ -241,9 +244,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ios-firebase-chat/Pods-ios-firebase-chat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

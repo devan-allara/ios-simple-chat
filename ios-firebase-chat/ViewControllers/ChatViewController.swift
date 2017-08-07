@@ -11,28 +11,35 @@ import Firebase
 
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chatText: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     
+    var ref: FIRDatabaseReference!
+    
     var currentUserName: String!
+    
     var messages = [message]() {
         didSet {
             tableView.reloadData()
             tableView.scrollToRow(at: IndexPath.init(row: messages.count - 1, section: 0), at: .bottom, animated: true)
+        }
     }
-}
-    
-    
-    var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         sendButton.layer.cornerRadius = 4
+        
         tableView.separatorStyle = .none
+        
+        //Shows setting delegate and datasource through code instead of through storyboard
         tableView.delegate = self
         tableView.dataSource = self
+        
         chatText.layer.cornerRadius = 5
+        
         let ref = FIRDatabase.database().reference(withPath: "messages")
         FIRAuth.auth()?.signInAnonymously(completion: { (User, Error) in
             
@@ -43,20 +50,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let newMessage = message(sender: name, message: text)
             self.messages.append(newMessage)
             }
-            
         }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if messages[indexPath.row].sender == currentUserName {
@@ -70,19 +68,24 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
     
-    @IBAction func sendPressed(_ sender: Any) {
+    @IBAction func sendTapped(_ sender: Any) {
         let newMessage: [String: String] = [
               "name": currentUserName,
               "text": self.chatText.text
                 ]
-        chatText.text = ""
         
+        //Clear out the text from the text field
+        chatText.text = ""
         
         let ref = FIRDatabase.database().reference(withPath: "messages")
         ref.childByAutoId().updateChildValues(newMessage)
-        
     }
-        
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+    }
 }
 
