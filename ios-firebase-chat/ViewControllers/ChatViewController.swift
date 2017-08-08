@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import SwiftKeychainWrapper
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,9 +20,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var currentUserName: String!
     
-    var messages = [message]() {
+    var messages = [Message]() {
         didSet {
             tableView.reloadData()
+            //Scroll to the bottom of the tableview
             tableView.scrollToRow(at: IndexPath.init(row: messages.count - 1, section: 0), at: .bottom, animated: true)
         }
     }
@@ -30,14 +31,21 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Round the send button's corners
         sendButton.layer.cornerRadius = 4
         
+        //Remove the separators between table view rows
         tableView.separatorStyle = .none
+        
+        //Set the table view row height to be dynamic
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         //Shows setting delegate and datasource through code instead of through storyboard
         tableView.delegate = self
         tableView.dataSource = self
         
+        //Round the chat text field's corners
         chatText.layer.cornerRadius = 5
         
         let ref = FIRDatabase.database().reference(withPath: "messages")
@@ -47,32 +55,35 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         ref.observe(.childAdded) { (snapshot) in
             let name = snapshot.childSnapshot(forPath: "name").value as! String
             let text = snapshot.childSnapshot(forPath: "text").value as! String
-            let newMessage = message(sender: name, message: text)
+            let newMessage = Message(sender: name, text: text)
             self.messages.append(newMessage)
-            }
         }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if messages[indexPath.row].sender == currentUserName {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageChatCell") as! MyMessageTableViewCell
-            cell.setUpCell(message: messages[indexPath.row])
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell") as! ChatTableViewCell
-            cell.setUpCell(message: messages[indexPath.row])
-            return cell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell") as! ChatTableViewCell
+        
+        var sentByCurrentUser: Bool
+        
+        messages[indexPath.row].sender == currentUserName ? (sentByCurrentUser = true) : (sentByCurrentUser = false)
+        
+        cell.setUpCell(withMessage: messages[indexPath.row], fromCurrentUser: sentByCurrentUser)
+        
+        return cell
     }
     
     @IBAction func sendTapped(_ sender: Any) {
+        
+        //Make sure the user has actually entered in some text
+        if chatText.text == "" {
+            return
+        }
+        
+        //Create a new message with the user's current username and the text in the chatText field
         let newMessage: [String: String] = [
               "name": currentUserName,
               "text": self.chatText.text
@@ -81,11 +92,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //Clear out the text from the text field
         chatText.text = ""
         
+        //Add the message as a new child value in Firebase
         let ref = FIRDatabase.database().reference(withPath: "messages")
         ref.childByAutoId().updateChildValues(newMessage)
     }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+        KeychainWrapper.standard.removeObject(forKey: "username")
     }
 }
 

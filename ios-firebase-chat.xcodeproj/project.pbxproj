@@ -12,14 +12,13 @@
 		BF527CB41F1D3D2D00245E34 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527CB31F1D3D2D00245E34 /* ChatViewController.swift */; };
 		BF527CB71F1D3E4300245E34 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527CB61F1D3E4300245E34 /* Message.swift */; };
 		BF753A8C1F1D2155007C2C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF753A8B1F1D2155007C2C9A /* AppDelegate.swift */; };
-		BF753A911F1D2155007C2C9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF753A8F1F1D2155007C2C9A /* Main.storyboard */; };
+		BF753A911F1D2155007C2C9A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF753A8F1F1D2155007C2C9A /* Login.storyboard */; };
 		BF753A941F1D2155007C2C9A /* ios_firebase_chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF753A921F1D2155007C2C9A /* ios_firebase_chat.xcdatamodeld */; };
 		BF753A961F1D2155007C2C9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF753A951F1D2155007C2C9A /* Assets.xcassets */; };
 		BF753A991F1D2155007C2C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF753A971F1D2155007C2C9A /* LaunchScreen.storyboard */; };
 		BF753AA11F1D236A007C2C9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF753AA01F1D236A007C2C9A /* LoginViewController.swift */; };
 		BFE67E2F1F1D2CB30054864B /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE67E2E1F1D2CB30054864B /* Chat.storyboard */; };
 		BFE79E021F1FD94500F0769F /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE79E011F1FD94500F0769F /* ChatTableViewCell.swift */; };
-		BFE79E041F210ADA00F0769F /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE79E031F210ADA00F0769F /* MyMessageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +27,7 @@
 		BF527CB61F1D3E4300245E34 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BF753A881F1D2155007C2C9A /* ios-firebase-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-firebase-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF753A8B1F1D2155007C2C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF753A901F1D2155007C2C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF753A901F1D2155007C2C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		BF753A931F1D2155007C2C9A /* ios_firebase_chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_firebase_chat.xcdatamodel; sourceTree = "<group>"; };
 		BF753A951F1D2155007C2C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF753A981F1D2155007C2C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,7 +35,6 @@
 		BF753AA01F1D236A007C2C9A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BFE67E2E1F1D2CB30054864B /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		BFE79E011F1FD94500F0769F /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatTableViewCell.swift; path = ../ChatTableViewCell.swift; sourceTree = "<group>"; };
-		BFE79E031F210ADA00F0769F /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
 		C30D99ED282E0F292B8A2E04 /* Pods-ios-firebase-chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-firebase-chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-firebase-chat/Pods-ios-firebase-chat.debug.xcconfig"; sourceTree = "<group>"; };
 		CBA4FBA030A940218237FF66 /* Pods_ios_firebase_chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_firebase_chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AEF05C6044F9B57E6B4222 /* Pods-ios-firebase-chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-firebase-chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-firebase-chat/Pods-ios-firebase-chat.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 			children = (
 				BF527CB61F1D3E4300245E34 /* Message.swift */,
 				BFE79E011F1FD94500F0769F /* ChatTableViewCell.swift */,
-				BFE79E031F210ADA00F0769F /* MyMessageTableViewCell.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -118,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				BF753A971F1D2155007C2C9A /* LaunchScreen.storyboard */,
-				BF753A8F1F1D2155007C2C9A /* Main.storyboard */,
+				BF753A8F1F1D2155007C2C9A /* Login.storyboard */,
 				BFE67E2E1F1D2CB30054864B /* Chat.storyboard */,
 			);
 			path = Storyboards;
@@ -168,6 +165,11 @@
 				TargetAttributes = {
 					BF753A871F1D2155007C2C9A = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -198,7 +200,7 @@
 				BF753A961F1D2155007C2C9A /* Assets.xcassets in Resources */,
 				394FD77F1F38B312006C0914 /* GoogleService-Info.plist in Resources */,
 				BFE67E2F1F1D2CB30054864B /* Chat.storyboard in Resources */,
-				BF753A911F1D2155007C2C9A /* Main.storyboard in Resources */,
+				BF753A911F1D2155007C2C9A /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,12 +250,14 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -269,7 +273,6 @@
 			files = (
 				BF753AA11F1D236A007C2C9A /* LoginViewController.swift in Sources */,
 				BF753A8C1F1D2155007C2C9A /* AppDelegate.swift in Sources */,
-				BFE79E041F210ADA00F0769F /* MyMessageTableViewCell.swift in Sources */,
 				BF527CB71F1D3E4300245E34 /* Message.swift in Sources */,
 				BFE79E021F1FD94500F0769F /* ChatTableViewCell.swift in Sources */,
 				BF527CB41F1D3D2D00245E34 /* ChatViewController.swift in Sources */,
@@ -280,12 +283,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BF753A8F1F1D2155007C2C9A /* Main.storyboard */ = {
+		BF753A8F1F1D2155007C2C9A /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BF753A901F1D2155007C2C9A /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		BF753A971F1D2155007C2C9A /* LaunchScreen.storyboard */ = {

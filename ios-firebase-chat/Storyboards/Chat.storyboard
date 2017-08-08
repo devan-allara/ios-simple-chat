@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,67 +50,49 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="84.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG7-nK-KoX">
-                                                    <rect key="frame" x="8" y="8" width="129" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG7-nK-KoX">
+                                                    <rect key="frame" x="8" y="8" width="398" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="YB3-W1-3YM"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="headTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srl-v6-cEg">
-                                                    <rect key="frame" x="8" y="32" width="237" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Message Text">
-                                                            <attributes>
-                                                                <font key="NSFont" metaFont="system" size="17"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIE-60-FTe" userLabel="Text Bubble View">
+                                                    <rect key="frame" x="8" y="37" width="398" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srl-v6-cEg">
+                                                            <rect key="frame" x="8" y="8" width="382" height="24"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="srl-v6-cEg" firstAttribute="top" secondItem="lIE-60-FTe" secondAttribute="top" constant="8" id="0aX-33-Y9H"/>
+                                                        <constraint firstItem="srl-v6-cEg" firstAttribute="leading" secondItem="lIE-60-FTe" secondAttribute="leading" constant="8" id="KKC-GD-2B6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="srl-v6-cEg" secondAttribute="trailing" constant="8" id="SCS-dB-PEf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="srl-v6-cEg" secondAttribute="bottom" constant="8" id="oOO-z0-2MT"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="lIE-60-FTe" secondAttribute="bottom" id="2ue-gZ-zpv"/>
+                                                <constraint firstItem="SG7-nK-KoX" firstAttribute="leading" secondItem="h83-n2-F3G" secondAttribute="leadingMargin" id="HGH-8z-sN3"/>
+                                                <constraint firstItem="SG7-nK-KoX" firstAttribute="top" secondItem="h83-n2-F3G" secondAttribute="topMargin" id="Ky3-zZ-DEK"/>
+                                                <constraint firstItem="lIE-60-FTe" firstAttribute="top" secondItem="SG7-nK-KoX" secondAttribute="bottom" constant="8" id="OXW-rW-nMH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lIE-60-FTe" secondAttribute="trailing" id="RoO-fp-gag"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SG7-nK-KoX" secondAttribute="trailing" id="ntY-og-QGy"/>
+                                                <constraint firstItem="lIE-60-FTe" firstAttribute="leading" secondItem="h83-n2-F3G" secondAttribute="leadingMargin" id="s0J-S9-bQF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageLabel" destination="srl-v6-cEg" id="AXb-au-6xE"/>
+                                            <outlet property="textBubbleView" destination="lIE-60-FTe" id="PE4-Qh-g9U"/>
                                             <outlet property="userLabel" destination="SG7-nK-KoX" id="Pdw-zE-rXZ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyMessageChatCell" id="wmE-xQ-cYa" customClass="MyMessageTableViewCell" customModule="ios_firebase_chat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="113" width="414" height="85"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wmE-xQ-cYa" id="G8n-jG-qBd" customClass="MyMessageTableViewCell" customModule="ios_firebase_chat">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84.666666666666671"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-4h-azl">
-                                                    <rect key="frame" x="169" y="31" width="237" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Message Text">
-                                                            <attributes>
-                                                                <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Me" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hg-jS-Yu7">
-                                                    <rect key="frame" x="277" y="8" width="129" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="messageText" destination="Cfd-4h-azl" id="wNr-6L-XC6"/>
-                                            <outlet property="nameLabel" destination="3hg-jS-Yu7" id="Ngo-vR-BbT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -117,17 +100,18 @@
                             <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-5g-1R4" userLabel="Footer View">
                                 <rect key="frame" x="0.0" y="676" width="414" height="60"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" fixedFrame="YES" pagingEnabled="YES" maximumZoomScale="40" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-YT-Sfx">
-                                        <rect key="frame" x="8" y="12" width="285" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" pagingEnabled="YES" maximumZoomScale="40" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-YT-Sfx">
+                                        <rect key="frame" x="8" y="12" width="290" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXa-UT-gYK">
-                                        <rect key="frame" x="307" y="12" width="99" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXa-UT-gYK">
+                                        <rect key="frame" x="306" y="12" width="100" height="36"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="S3x-Jn-OTG"/>
+                                        </constraints>
                                         <state key="normal" title="Send">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -140,6 +124,13 @@
                                 <color key="backgroundColor" red="0.82352941180000006" green="0.85882352939999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0fT-EQ-JDl"/>
+                                    <constraint firstItem="sa3-YT-Sfx" firstAttribute="top" secondItem="DBP-5g-1R4" secondAttribute="top" constant="12" id="Lte-Tf-hSS"/>
+                                    <constraint firstAttribute="bottom" secondItem="sa3-YT-Sfx" secondAttribute="bottom" constant="12" id="PXT-ak-cqw"/>
+                                    <constraint firstItem="GXa-UT-gYK" firstAttribute="leading" secondItem="sa3-YT-Sfx" secondAttribute="trailing" constant="8" id="aDU-rP-cff"/>
+                                    <constraint firstAttribute="trailing" secondItem="GXa-UT-gYK" secondAttribute="trailing" constant="8" id="cBy-gn-gUW"/>
+                                    <constraint firstAttribute="bottom" secondItem="GXa-UT-gYK" secondAttribute="bottom" constant="12" id="fTT-sc-To9"/>
+                                    <constraint firstItem="GXa-UT-gYK" firstAttribute="top" secondItem="DBP-5g-1R4" secondAttribute="top" constant="12" id="fla-bl-dhw"/>
+                                    <constraint firstItem="sa3-YT-Sfx" firstAttribute="leading" secondItem="DBP-5g-1R4" secondAttribute="leading" constant="8" id="s8a-kN-dyN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -162,9 +153,11 @@
                         <outlet property="chatText" destination="sa3-YT-Sfx" id="kQs-l7-wWs"/>
                         <outlet property="sendButton" destination="GXa-UT-gYK" id="JWW-oJ-iTh"/>
                         <outlet property="tableView" destination="j9R-bK-UWp" id="OnK-Z2-x2e"/>
+                        <segue destination="UuB-RZ-TE3" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="izY-MZ-mza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6z-kS-EeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UuB-RZ-TE3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-218.84057971014494" y="268.20652173913044"/>
         </scene>

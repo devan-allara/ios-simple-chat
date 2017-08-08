@@ -10,4 +10,5 @@ target 'ios-firebase-chat' do
         pod 'Firebase/Auth'
         pod 'Firebase/Database'
 	pod 'IQKeyboardManager'
+    pod 'SwiftKeychainWrapper'
 end

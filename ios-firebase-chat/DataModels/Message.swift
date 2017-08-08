@@ -9,13 +9,12 @@
 import Foundation
 
 //Data model for a message, containing parameters for a sender and the message text
-class message {
+class Message {
     var sender: String
-    var message: String
+    var text: String
     
-    init(sender: String, message: String) {
+    init(sender: String, text: String) {
         self.sender = sender
-        self.message = message
+        self.text = text
     }
-
 }
