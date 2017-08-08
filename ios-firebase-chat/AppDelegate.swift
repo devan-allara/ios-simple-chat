@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false
         IQKeyboardManager.shared().shouldShowTextFieldPlaceholder = false
+        IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         IQKeyboardManager.shared().previousNextDisplayMode = .alwaysHide
         
         FIRApp.configure()
