@@ -81,7 +81,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lIE-60-FTe" secondAttribute="bottom" id="2ue-gZ-zpv"/>
-                                                <constraint firstItem="srl-v6-cEg" firstAttribute="width" relation="lessThanOrEqual" secondItem="h83-n2-F3G" secondAttribute="width" constant="-50" id="9Rm-Dw-3rc"/>
+                                                <constraint firstItem="srl-v6-cEg" firstAttribute="width" relation="lessThanOrEqual" secondItem="h83-n2-F3G" secondAttribute="width" constant="-48" id="CGY-IX-MwR"/>
                                                 <constraint firstItem="SG7-nK-KoX" firstAttribute="top" secondItem="h83-n2-F3G" secondAttribute="topMargin" id="Ky3-zZ-DEK"/>
                                                 <constraint firstItem="lIE-60-FTe" firstAttribute="leading" secondItem="h83-n2-F3G" secondAttribute="leadingMargin" constant="8" id="LtX-jZ-p6q"/>
                                                 <constraint firstItem="lIE-60-FTe" firstAttribute="top" secondItem="SG7-nK-KoX" secondAttribute="bottom" constant="8" id="OXW-rW-nMH"/>
