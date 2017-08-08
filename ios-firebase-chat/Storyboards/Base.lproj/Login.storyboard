@@ -20,15 +20,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Desired Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Agk-04-dcG">
-                                <rect key="frame" x="57.333333333333343" y="343" width="300" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Agk-04-dcG">
+                                <rect key="frame" x="57" y="303.66666666666669" width="300" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="pVq-wH-mRg"/>
+                                    <constraint firstAttribute="height" constant="30" id="pVq-wH-mRg"/>
                                     <constraint firstAttribute="width" constant="300" id="wne-5h-QS0"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Chat!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUb-17-GZT">
                                 <rect key="frame" x="84.333333333333314" y="64" width="246" height="54"/>
@@ -37,7 +37,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4K-DV-cvi">
-                                <rect key="frame" x="183" y="401" width="49" height="36"/>
+                                <rect key="frame" x="157.66666666666669" y="391.66666666666669" width="100.00000000000006" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="pWg-lt-pdS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,7 +51,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86v-g8-c0s">
-                                <rect key="frame" x="172.66666666666666" y="445" width="70" height="36"/>
+                                <rect key="frame" x="157.66666666666669" y="435.66666666666669" width="100.00000000000006" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="RKu-c8-phA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,21 +64,34 @@
                                     <segue destination="2Ml-LV-ZQd" kind="show" id="JyJ-Lb-4XX"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ath-mk-u3K">
+                                <rect key="frame" x="57" y="353.66666666666669" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3DK-0J-ExY"/>
+                                    <constraint firstAttribute="width" constant="300" id="6zP-Pb-mzq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Agk-04-dcG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3xp-VQ-eMJ"/>
+                            <constraint firstItem="ath-mk-u3K" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Fq-hI-qv8"/>
+                            <constraint firstItem="ath-mk-u3K" firstAttribute="top" secondItem="Agk-04-dcG" secondAttribute="bottom" constant="20" id="5Oo-8T-Rd9"/>
                             <constraint firstItem="Agk-04-dcG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Br2-nT-MHj"/>
                             <constraint firstItem="86v-g8-c0s" firstAttribute="top" secondItem="x4K-DV-cvi" secondAttribute="bottom" constant="8" id="HUI-cM-Due"/>
                             <constraint firstItem="x4K-DV-cvi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rst-Zi-YW5"/>
                             <constraint firstItem="86v-g8-c0s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zze-31-dOy"/>
                             <constraint firstItem="TUb-17-GZT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fg2-VA-8kT"/>
-                            <constraint firstItem="x4K-DV-cvi" firstAttribute="top" secondItem="Agk-04-dcG" secondAttribute="bottom" constant="8" id="gSb-bj-bkA"/>
+                            <constraint firstItem="ath-mk-u3K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kpN-vV-TNe"/>
+                            <constraint firstItem="x4K-DV-cvi" firstAttribute="top" secondItem="ath-mk-u3K" secondAttribute="bottom" constant="8" id="n2p-Yo-Qk6"/>
                             <constraint firstItem="TUb-17-GZT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="yC1-bi-EyU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="userNameField" destination="Agk-04-dcG" id="5cW-rk-hPK"/>
+                        <outlet property="emailField" destination="Agk-04-dcG" id="efA-Rq-7ti"/>
+                        <outlet property="passwordField" destination="ath-mk-u3K" id="HI9-V6-sYg"/>
                         <segue destination="imA-sH-a5N" kind="show" identifier="LoginToChat" id="xBL-pK-5I1"/>
                     </connections>
                 </viewController>

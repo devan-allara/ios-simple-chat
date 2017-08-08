@@ -13,21 +13,28 @@ import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var userNameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
-    var username: String!
+    var email: String!
+    var password: String!
     
     override func viewDidLoad() {
-        //If we have a value for username saved in the Keychain
-        if KeychainWrapper.standard.hasValue(forKey: "username") {
-            //Sign into Firebase anonymously
-            FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+        //If we have a value for email and password saved in the Keychain
+        if KeychainWrapper.standard.hasValue(forKey: "email") && KeychainWrapper.standard.hasValue(forKey: "password") {
+            
+            guard let email = KeychainWrapper.standard.string(forKey: "email"), let password = KeychainWrapper.standard.string(forKey: "password") else {
+                return
+            }
+            
+            //Sign into Firebase
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if let err:Error = error {
                     print(err.localizedDescription)
                     return
                 }
-                //Set the username parameter and go to the Chat page
-                self.username = KeychainWrapper.standard.string(forKey: "username")
+                //Set the email parameter and go to the Chat page
+                self.email = KeychainWrapper.standard.string(forKey: "email")
                 self.performSegue(withIdentifier: "LoginToChat", sender: self)
             })
         }
@@ -35,24 +42,26 @@ class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? ChatViewController {
-            destinationVC.currentUserName = username
+            destinationVC.email = email
         }
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        if !userNameField.hasText {
-            let alert = UIAlertController(title: "Error", message: "Please Enter A Username!", preferredStyle: .alert)
+        if !emailField.hasText || !passwordField.hasText {
+            let alert = UIAlertController(title: "Error", message: "Email or password has not been entered!", preferredStyle: .alert)
             let okayButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alert.addAction(okayButton)
             present(alert, animated: true, completion: nil)
         } else {
-            username = userNameField.text
-            FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            email = emailField.text
+            password = passwordField.text
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if let err:Error = error {
                     print(err.localizedDescription)
                     return
                 }
-                KeychainWrapper.standard.set(self.username, forKey: "username")
+                KeychainWrapper.standard.set(self.email, forKey: "email")
+                KeychainWrapper.standard.set(self.password, forKey: "password")
                 self.performSegue(withIdentifier: "LoginToChat", sender: nil)
             })
         }

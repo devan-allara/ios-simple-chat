@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
     
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+                if let err:Error = error {
+                    print(err.localizedDescription)
+                    //probably need to display an alert here
+                    return
+                }
+                
+                self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+            })
+        }
+    }
 }

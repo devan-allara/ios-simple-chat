@@ -18,7 +18,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var ref: FIRDatabaseReference!
     
-    var currentUserName: String!
+    var email: String!
     
     var messages = [Message]() {
         didSet {
@@ -67,7 +67,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         var sentByCurrentUser: Bool
         
-        messages[indexPath.row].sender == currentUserName ? (sentByCurrentUser = true) : (sentByCurrentUser = false)
+        messages[indexPath.row].sender == email ? (sentByCurrentUser = true) : (sentByCurrentUser = false)
         
         cell.setUpCell(withMessage: messages[indexPath.row], fromCurrentUser: sentByCurrentUser)
         
@@ -83,9 +83,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //Create a new message with the user's current username and the text in the chatText field
         let newMessage: [String: String] = [
-              "name": currentUserName,
+              "name": email,
               "text": self.chatText.text
-                ]
+            ]
         
         //Clear out the text from the text field
         chatText.text = ""
@@ -97,7 +97,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         //Remove the saved username from the Keychain, and unwind to the login screen
-        KeychainWrapper.standard.removeObject(forKey: "username")
+        KeychainWrapper.standard.removeObject(forKey: "email")
+        KeychainWrapper.standard.removeObject(forKey: "password")
         self.performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
 }
