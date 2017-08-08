@@ -12,14 +12,18 @@ import SwiftKeychainWrapper
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //References to UI elements
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chatText: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     
-    var ref: FIRDatabaseReference!
+    //Used to store a reference to the Firebase database
+    let ref: FIRDatabaseReference = FIRDatabase.database().reference(withPath: "messages")
     
+    //Stores the email of the user so messages can be checked to see if they were sent by the logged in user
     var email: String!
     
+    //Message array. Whenever it is set, reload the table view and scroll to the bottom so the most recent message is being viewed
     var messages = [Message]() {
         didSet {
             tableView.reloadData()
@@ -49,7 +53,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //Round the chat text field's corners
         chatText.layer.cornerRadius = 5
         
-        let ref = FIRDatabase.database().reference(withPath: "messages")
+        //Observe the reference when a child is added, creating a new message from the snapshot and appending it to the array of messages
         ref.observe(.childAdded) { (snapshot) in
             let name = snapshot.childSnapshot(forPath: "name").value as! String
             let text = snapshot.childSnapshot(forPath: "text").value as! String
@@ -91,7 +95,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         chatText.text = ""
         
         //Add the message as a new child value in Firebase
-        let ref = FIRDatabase.database().reference(withPath: "messages")
         ref.childByAutoId().updateChildValues(newMessage)
     }
     
