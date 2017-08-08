@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Jc-rIj">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Jc-rIj">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,7 +51,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG7-nK-KoX">
-                                                    <rect key="frame" x="8" y="8" width="398" height="21"/>
+                                                    <rect key="frame" x="16" y="8" width="382" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="YB3-W1-3YM"/>
                                                     </constraints>
@@ -60,10 +60,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIE-60-FTe" userLabel="Text Bubble View">
-                                                    <rect key="frame" x="8" y="37" width="398" height="40"/>
+                                                    <rect key="frame" x="16" y="37" width="382" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srl-v6-cEg">
-                                                            <rect key="frame" x="8" y="8" width="382" height="24"/>
+                                                            <rect key="frame" x="8" y="8" width="366" height="24"/>
                                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -81,12 +81,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lIE-60-FTe" secondAttribute="bottom" id="2ue-gZ-zpv"/>
-                                                <constraint firstItem="SG7-nK-KoX" firstAttribute="leading" secondItem="h83-n2-F3G" secondAttribute="leadingMargin" id="HGH-8z-sN3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lIE-60-FTe" secondAttribute="trailing" constant="8" id="AHO-X4-veo"/>
                                                 <constraint firstItem="SG7-nK-KoX" firstAttribute="top" secondItem="h83-n2-F3G" secondAttribute="topMargin" id="Ky3-zZ-DEK"/>
+                                                <constraint firstItem="lIE-60-FTe" firstAttribute="leading" secondItem="h83-n2-F3G" secondAttribute="leadingMargin" constant="8" id="LtX-jZ-p6q"/>
                                                 <constraint firstItem="lIE-60-FTe" firstAttribute="top" secondItem="SG7-nK-KoX" secondAttribute="bottom" constant="8" id="OXW-rW-nMH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="lIE-60-FTe" secondAttribute="trailing" id="RoO-fp-gag"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="SG7-nK-KoX" secondAttribute="trailing" id="ntY-og-QGy"/>
-                                                <constraint firstItem="lIE-60-FTe" firstAttribute="leading" secondItem="h83-n2-F3G" secondAttribute="leadingMargin" id="s0J-S9-bQF"/>
+                                                <constraint firstItem="SG7-nK-KoX" firstAttribute="leading" secondItem="h83-n2-F3G" secondAttribute="leadingMargin" constant="8" id="S9a-R9-8lh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SG7-nK-KoX" secondAttribute="trailing" constant="8" id="y5p-IC-Iqz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

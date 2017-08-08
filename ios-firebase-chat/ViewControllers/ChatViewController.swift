@@ -23,6 +23,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     var messages = [Message]() {
         didSet {
             tableView.reloadData()
+            
             //Scroll to the bottom of the tableview
             tableView.scrollToRow(at: IndexPath.init(row: messages.count - 1, section: 0), at: .bottom, animated: true)
         }
@@ -49,9 +50,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         chatText.layer.cornerRadius = 5
         
         let ref = FIRDatabase.database().reference(withPath: "messages")
-        FIRAuth.auth()?.signInAnonymously(completion: { (User, Error) in
-            
-        })
         ref.observe(.childAdded) { (snapshot) in
             let name = snapshot.childSnapshot(forPath: "name").value as! String
             let text = snapshot.childSnapshot(forPath: "text").value as! String
@@ -98,8 +96,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+        //Remove the saved username from the Keychain, and unwind to the login screen
         KeychainWrapper.standard.removeObject(forKey: "username")
+        self.performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
 }
 

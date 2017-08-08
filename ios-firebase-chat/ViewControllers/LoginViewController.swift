@@ -34,8 +34,9 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! ChatViewController
-        destinationVC.currentUserName = username
+        if let destinationVC = segue.destination as? ChatViewController {
+            destinationVC.currentUserName = username
+        }
     }
     
     @IBAction func loginButton(_ sender: Any) {
