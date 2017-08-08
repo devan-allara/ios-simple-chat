@@ -23,7 +23,6 @@ class SignUpViewController: UIViewController {
             FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
                 if let err:Error = error {
                     print(err.localizedDescription)
-                    //probably need to display an alert here
                     return
                 }
                 

@@ -60,10 +60,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIE-60-FTe" userLabel="Text Bubble View">
-                                                    <rect key="frame" x="16" y="37" width="382" height="40"/>
+                                                    <rect key="frame" x="16" y="37" width="121.66666666666666" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srl-v6-cEg">
-                                                            <rect key="frame" x="8" y="8" width="366" height="24"/>
+                                                            <rect key="frame" x="8" y="8" width="105.66666666666666" height="24"/>
                                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lIE-60-FTe" secondAttribute="bottom" id="2ue-gZ-zpv"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="lIE-60-FTe" secondAttribute="trailing" constant="8" id="AHO-X4-veo"/>
+                                                <constraint firstItem="srl-v6-cEg" firstAttribute="width" relation="lessThanOrEqual" secondItem="h83-n2-F3G" secondAttribute="width" constant="-50" id="9Rm-Dw-3rc"/>
                                                 <constraint firstItem="SG7-nK-KoX" firstAttribute="top" secondItem="h83-n2-F3G" secondAttribute="topMargin" id="Ky3-zZ-DEK"/>
                                                 <constraint firstItem="lIE-60-FTe" firstAttribute="leading" secondItem="h83-n2-F3G" secondAttribute="leadingMargin" constant="8" id="LtX-jZ-p6q"/>
                                                 <constraint firstItem="lIE-60-FTe" firstAttribute="top" secondItem="SG7-nK-KoX" secondAttribute="bottom" constant="8" id="OXW-rW-nMH"/>
