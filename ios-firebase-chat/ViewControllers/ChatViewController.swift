@@ -81,7 +81,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func sendTapped(_ sender: Any) {
         
         //Make sure the user has actually entered in some text
-        if chatText.text == "" {
+        if chatText.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            //Display an error alert
+            let alert = createSimpleActionSheetAlert(title: "Error", message: "You can't send a blank message.", dismissButtonTitle: "Okay")
+            present(alert, animated: true, completion: nil)
             return
         }
         

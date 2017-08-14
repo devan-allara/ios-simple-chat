@@ -30,7 +30,9 @@ class LoginViewController: UIViewController {
         //Attempt to sign into Firebase with the email and password
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if let err:Error = error {
-                print(err.localizedDescription)
+                //Display an error alert
+                let alert = createSimpleActionSheetAlert(title: "Error", message: err.localizedDescription, dismissButtonTitle: "Okay")
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             //Set the email parameter and go to the Chat page
@@ -50,10 +52,9 @@ class LoginViewController: UIViewController {
         //Check to see if either of the fields don't have text entered
         if !emailField.hasText || !passwordField.hasText {
             //Display an error alert
-            let alert = UIAlertController(title: "Error", message: "Email or password has not been entered!", preferredStyle: .actionSheet)
-            let okayButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alert.addAction(okayButton)
+            let alert = createSimpleActionSheetAlert(title: "Error", message: "Email or password has not been entered.", dismissButtonTitle: "Okay")
             present(alert, animated: true, completion: nil)
+            return
         } else {
             //Set the email and password variables with the values from the fields
             email = emailField.text
@@ -62,7 +63,9 @@ class LoginViewController: UIViewController {
             //Attempt to sign into Firebase with the email and password
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if let err:Error = error {
-                    print(err.localizedDescription)
+                    //Display an error alert
+                    let alert = createSimpleActionSheetAlert(title: "Error", message: err.localizedDescription, dismissButtonTitle: "Okay")
+                    self.present(alert, animated: true, completion: nil)
                     return
                 }
                 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3927DBED1F42276900965EC5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927DBEC1F42276900965EC5 /* Utilities.swift */; };
 		394FD77F1F38B312006C0914 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 394FD77E1F38B2FF006C0914 /* GoogleService-Info.plist */; };
 		396260ED1F395A7D008A6089 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396260EC1F395A7D008A6089 /* SignUpViewController.swift */; };
 		396260F01F395AB1008A6089 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396260EF1F395AB1008A6089 /* SignUp.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3927DBEC1F42276900965EC5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		394FD77E1F38B2FF006C0914 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		396260EC1F395A7D008A6089 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		396260EF1F395AB1008A6089 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 				E9AEF05C6044F9B57E6B4222 /* Pods-ios-firebase-chat.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3927DBEB1F42274800965EC5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3927DBEC1F42276900965EC5 /* Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		396260EE1F395A84008A6089 /* UI Components */ = {
@@ -114,6 +124,7 @@
 				396260EE1F395A84008A6089 /* UI Components */,
 				BFE67E2D1F1D2C7A0054864B /* ViewControllers */,
 				BFE67E2C1F1D2C650054864B /* Storyboards */,
+				3927DBEB1F42274800965EC5 /* Utilities */,
 				BF753A8B1F1D2155007C2C9A /* AppDelegate.swift */,
 				BF753A951F1D2155007C2C9A /* Assets.xcassets */,
 				BF753A9A1F1D2155007C2C9A /* Info.plist */,
@@ -293,6 +304,7 @@
 				BF527CB71F1D3E4300245E34 /* Message.swift in Sources */,
 				BFE79E021F1FD94500F0769F /* ChatTableViewCell.swift in Sources */,
 				BF527CB41F1D3D2D00245E34 /* ChatViewController.swift in Sources */,
+				3927DBED1F42276900965EC5 /* Utilities.swift in Sources */,
 				BF753A941F1D2155007C2C9A /* ios_firebase_chat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
