@@ -18,6 +18,7 @@ class ChatTableViewCell: UITableViewCell {
     //Function that sets up the cell UI elements 
     func setUpCell(withMessage message: Message, fromCurrentUser: Bool) {
         
+        //Set the parameters that will be used for both cell setups
         userLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         messageLabel.text = "\(message.text)"
         textBubbleView.layer.cornerRadius = 8
