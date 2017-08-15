@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3927DBED1F42276900965EC5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927DBEC1F42276900965EC5 /* Utilities.swift */; };
+		3927DBF11F42324A00965EC5 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927DBF01F42324A00965EC5 /* ForgotPasswordViewController.swift */; };
 		394FD77F1F38B312006C0914 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 394FD77E1F38B2FF006C0914 /* GoogleService-Info.plist */; };
 		396260ED1F395A7D008A6089 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396260EC1F395A7D008A6089 /* SignUpViewController.swift */; };
-		396260F01F395AB1008A6089 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396260EF1F395AB1008A6089 /* SignUp.storyboard */; };
 		550565CAAA8AE63EF7E03CDA /* Pods_ios_firebase_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA4FBA030A940218237FF66 /* Pods_ios_firebase_chat.framework */; };
 		BF527CB41F1D3D2D00245E34 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527CB31F1D3D2D00245E34 /* ChatViewController.swift */; };
 		BF527CB71F1D3E4300245E34 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF527CB61F1D3E4300245E34 /* Message.swift */; };
@@ -26,9 +26,9 @@
 
 /* Begin PBXFileReference section */
 		3927DBEC1F42276900965EC5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3927DBF01F42324A00965EC5 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		394FD77E1F38B2FF006C0914 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		396260EC1F395A7D008A6089 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		396260EF1F395AB1008A6089 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		BF527CB31F1D3D2D00245E34 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BF527CB61F1D3E4300245E34 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BF753A881F1D2155007C2C9A /* ios-firebase-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-firebase-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +139,6 @@
 			children = (
 				BF753A971F1D2155007C2C9A /* LaunchScreen.storyboard */,
 				BF753A8F1F1D2155007C2C9A /* Login.storyboard */,
-				396260EF1F395AB1008A6089 /* SignUp.storyboard */,
 				BFE67E2E1F1D2CB30054864B /* Chat.storyboard */,
 			);
 			path = Storyboards;
@@ -151,6 +150,7 @@
 				BF753AA01F1D236A007C2C9A /* LoginViewController.swift */,
 				BF527CB31F1D3D2D00245E34 /* ChatViewController.swift */,
 				396260EC1F395A7D008A6089 /* SignUpViewController.swift */,
+				3927DBF01F42324A00965EC5 /* ForgotPasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -224,7 +224,6 @@
 			files = (
 				BF753A991F1D2155007C2C9A /* LaunchScreen.storyboard in Resources */,
 				BF753A961F1D2155007C2C9A /* Assets.xcassets in Resources */,
-				396260F01F395AB1008A6089 /* SignUp.storyboard in Resources */,
 				394FD77F1F38B312006C0914 /* GoogleService-Info.plist in Resources */,
 				BFE67E2F1F1D2CB30054864B /* Chat.storyboard in Resources */,
 				BF753A911F1D2155007C2C9A /* Login.storyboard in Resources */,
@@ -303,6 +302,7 @@
 				BF753A8C1F1D2155007C2C9A /* AppDelegate.swift in Sources */,
 				BF527CB71F1D3E4300245E34 /* Message.swift in Sources */,
 				BFE79E021F1FD94500F0769F /* ChatTableViewCell.swift in Sources */,
+				3927DBF11F42324A00965EC5 /* ForgotPasswordViewController.swift in Sources */,
 				BF527CB41F1D3D2D00245E34 /* ChatViewController.swift in Sources */,
 				3927DBED1F42276900965EC5 /* Utilities.swift in Sources */,
 				BF753A941F1D2155007C2C9A /* ios_firebase_chat.xcdatamodeld in Sources */,

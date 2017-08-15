@@ -15,6 +15,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        emailTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         //Go back to the login screen
         self.performSegue(withIdentifier: "unwindToLogin", sender: self)

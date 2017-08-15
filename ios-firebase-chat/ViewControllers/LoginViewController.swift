@@ -41,10 +41,24 @@ class LoginViewController: UIViewController {
         })
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        emailField.text?.removeAll()
+        passwordField.text?.removeAll()
+    }
+    
     //When preparing to segue to the ChatViewController, set the email parameter in that view controller with the value of the email variable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? ChatViewController {
             destinationVC.email = email
+        } else {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
         }
     }
     
